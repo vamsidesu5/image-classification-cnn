@@ -1,8 +1,8 @@
-from keras.models import Sequential
-from keras.layers import Conv2D
-from keras.layers import MaxPooling2D
-from keras.layers import Flatten
-from keras.layers import Dense
+from tensorflow.python.keras.models import Sequential
+from tensorflow.python.keras.layers import Conv2D
+from tensorflow.python.keras.layers import MaxPooling2D
+from tensorflow.python.keras.layers import Flatten
+from tensorflow.python.keras.layers import Dense
 
 classifier = Sequential()
 classifier.add(Conv2D(32, (3, 3), input_shape = (64, 64, 3), activation = 'relu'))
@@ -40,6 +40,6 @@ test_image = np.expand_dims(test_image, axis = 0)
 result = classifier.predict(test_image)
 training_set.class_indices
 if result[0][0] == 1:
-prediction = 'dog'
+    prediction = 'dog'
 else:
-prediction = 'cat'
+    prediction = 'cat'
